@@ -1,0 +1,129 @@
+/* Luna site: exact Daybreak (light) tokens and motion from the PC (theme.css) and Android (core/theme.ts) apps. */
+.lp{--bg:#FBF6EE;--surface:#FFFCF6;--glass:rgba(255,255,255,.75);--bar:rgba(255,252,246,.85);--ink:#2B1E2F;--mute:#6B5A68;--line:#EADFD0;--cborder:#D9C9B5;--accent:#F4C77A;--pmute:#F8DDAA;--plink:#F4C77A;--asleep:#F8DDAA;--cheek:#F2A1A8;--near:#F3E6D3;--far:#F7EEE2;--tint:#F6EEE2;--tint2:#F3E9DB;--pri:#2B1E2F;--onp:#FBF6EE;--face:#2B1E2F;--link:#3B5BA9;--frame:#2B1E2F;--warnbg:rgba(248,238,219,.75);--warnline:#E6D3AE;--warnink:#5C3D00;--okbg:#E7F1E8;--counting:#2E7D45;--r-ctrl:4px;--r-tile:5px;--r-btn:6px;--r-card:8px;--sh-dock:0 8px 24px rgba(43,30,47,.08);--sh-pop:0 12px 32px rgba(43,30,47,.16);--sh:43,30,47;--glow:rgba(43,30,47,.14);color-scheme:light}
+
+/* App glass cards and note callouts (matching components.css). */
+.lp .glass{background:var(--glass);backdrop-filter:blur(4px);border-radius:var(--r-card)}
+.lp .note{background:var(--warnbg);border:1px solid var(--warnline);border-radius:var(--r-btn);color:var(--warnink)}
+
+:root{--spring:cubic-bezier(.3,1.2,.5,1);--pop:cubic-bezier(.3,1.5,.5,1);--ease:cubic-bezier(.2,.7,.2,1);interpolate-size:allow-keywords}
+html{scroll-behavior:smooth}
+body{margin:0}
+[hidden]{display:none !important}
+
+/* Page enter: every page rises in, so moving between pages reads as one site. */
+@keyframes lp-page{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lp{animation:lp-page .6s var(--spring) both}
+
+/* Hero: the copy arrives line by line, the product picture after it, the phone last. */
+@keyframes lp-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.lp .stagger>*{animation:lp-rise .7s var(--spring) both}
+.lp .stagger>*:nth-child(1){animation-delay:.08s}
+.lp .stagger>*:nth-child(2){animation-delay:.16s}
+.lp .stagger>*:nth-child(3){animation-delay:.24s}
+.lp .stagger>*:nth-child(4){animation-delay:.32s}
+.lp .stagger>*:nth-child(n+5){animation-delay:.4s}
+@keyframes lp-window{from{opacity:0;transform:translateY(40px) rotate(-1.5deg) scale(.96)}to{opacity:1;transform:none}}
+.lp .window-in{animation:lp-window .9s var(--spring) .3s both}
+@keyframes lp-phone-in{from{opacity:0;transform:translate(40px,30px) rotate(8deg)}to{opacity:1;transform:rotate(3deg)}}
+@keyframes lp-float{0%,100%{transform:rotate(3deg) translateY(0)}50%{transform:rotate(2deg) translateY(-10px)}}
+.lp .phone-in{animation:lp-phone-in .9s var(--spring) .6s both,lp-float 6s ease-in-out 1.6s infinite}
+
+/* Clouds drift slowly, each at its own pace. */
+@keyframes lp-drift{from{transform:translateX(-24px)}to{transform:translateX(24px)}}
+.lp .clouds>div{animation:lp-drift 18s ease-in-out infinite alternate}
+.lp .clouds>div:nth-child(2){animation-duration:24s;animation-delay:-8s}
+.lp .clouds>div:nth-child(3){animation-duration:30s;animation-delay:-15s}
+
+/* The pet: steps up and down like the app, blinks now and then, walks the timer track. */
+@keyframes lp-pet-in{0%{opacity:0;transform:translateY(8px) scale(.7)}60%{opacity:1;transform:translateY(-3px) scale(1.06)}100%{opacity:1;transform:none}}
+@keyframes lp-bob{0%,100%{transform:translateY(0) scale(1.02,.98)}50%{transform:translateY(calc(var(--amp,4px) * -1)) scale(.99,1.01)}}
+@keyframes lp-hop{0%{transform:none}30%{transform:translateY(-12px) scale(.96,1.05)}55%{transform:translateY(0) scale(1.06,.94)}75%{transform:translateY(-3px)}100%{transform:none}}
+.lp .pet-bob,.lp .pet-walk>span{transform-origin:50% 100%;will-change:transform;filter:drop-shadow(0 6px 8px var(--glow))}
+.lp .pet-bob{animation:lp-pet-in .55s var(--pop) both,lp-bob 3.6s ease-in-out .55s infinite}
+.lp a:hover .pet-bob,.lp .pet-bob:hover{animation:lp-hop .7s var(--pop) 1,lp-bob 3.6s ease-in-out .7s infinite}
+@keyframes lp-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.lp .eye{transform-origin:center;animation:lp-blink 4.5s infinite}
+.lp .pet-walk{transition:left 1s linear}
+.lp .pet-walk>span{display:block;width:100%;height:100%;position:relative;background:inherit;--amp:3px;animation:lp-bob 1.4s ease-in-out infinite}
+@keyframes lp-tick{0%{opacity:1}50%{opacity:.35}100%{opacity:1}}
+.lp .colon{animation:lp-tick 1s steps(2,jump-none) infinite}
+
+/* Download started: the pet jumps for joy, confetti falls, the bar fills. */
+@keyframes lp-jump{0%,60%,100%{transform:translateY(0) scale(1,1)}10%{transform:translateY(0) scale(1.1,.88)}30%{transform:translateY(-34px) scale(.94,1.06)}50%{transform:translateY(0) scale(1.06,.94)}}
+.lp .pet-jump{animation:lp-jump 1.6s var(--ease) .4s 3 both}
+@keyframes lp-fall{0%{opacity:0;transform:translateY(-40px) rotate(0)}10%{opacity:1}100%{opacity:0;transform:translateY(420px) rotate(540deg)}}
+.lp .confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lp .confetti i{position:absolute;top:0;width:10px;height:10px;animation:lp-fall 2.8s cubic-bezier(.3,.6,.6,1) both}
+.lp .confetti i:nth-child(odd){width:8px;height:14px}
+.lp .confetti i:nth-child(1){left:30%;background:var(--accent);animation-delay:.3s}
+.lp .confetti i:nth-child(2){left:36%;background:var(--cheek);animation-delay:.5s}
+.lp .confetti i:nth-child(3){left:42%;background:var(--ink);animation-delay:.2s}
+.lp .confetti i:nth-child(4){left:48%;background:var(--asleep);animation-delay:.7s}
+.lp .confetti i:nth-child(5){left:54%;background:var(--accent);animation-delay:.4s}
+.lp .confetti i:nth-child(6){left:60%;background:var(--cheek);animation-delay:.6s}
+.lp .confetti i:nth-child(7){left:66%;background:var(--ink);animation-delay:.35s}
+.lp .confetti i:nth-child(8){left:70%;background:var(--accent);animation-delay:.8s}
+.lp .confetti i:nth-child(9){left:33%;background:var(--asleep);animation-delay:.9s}
+.lp .confetti i:nth-child(10){left:63%;background:var(--cheek);animation-delay:1s}
+@keyframes lp-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.lp .fill{transform-origin:left;animation:lp-fill 2.4s var(--ease) .3s both}
+@keyframes lp-fade{from{opacity:0}to{opacity:1}}
+.lp .after-fill{animation:lp-fade .4s ease 2.7s both}
+
+/* Not found: the pet sleeps, breathing, with Zs drifting up. */
+@keyframes lp-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.04,.96)}}
+.lp .pet-sleep{transform-origin:bottom;animation:lp-breathe 3.2s ease-in-out infinite}
+@keyframes lp-z{0%{opacity:0;transform:translate(0,0) scale(.6)}20%{opacity:1}100%{opacity:0;transform:translate(26px,-60px) scale(1.2)}}
+.lp .zzz{position:absolute;font-weight:700;color:var(--mute);animation:lp-z 3s ease-out infinite}
+.lp .zzz:nth-child(2){animation-delay:1s}
+.lp .zzz:nth-child(3){animation-delay:2s}
+
+/* Buttons & nav links: spring lift on hover, press on click; text links grow an underline. */
+.lp a[style*="border-radius"]:not([aria-current="page"]),.lp button{transition:transform .25s var(--pop),box-shadow .25s,background-color .2s}
+.lp a[style*="border-radius"]:not([aria-current="page"]):hover,.lp button:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(var(--sh),.14)}
+.lp a[style*="border-radius"]:not([aria-current="page"]):active,.lp button:not(:disabled):active{transform:scale(.96);box-shadow:none}
+.lp a[style*="border-radius"]:not([aria-current="page"]):hover svg{animation:lp-nudge .6s var(--spring)}
+@keyframes lp-nudge{0%{transform:none}40%{transform:translateY(3px)}100%{transform:none}}
+.lp p a,.lp li a,.lp nav a:not([style*="border-radius"]){background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .35s var(--ease),color .2s}
+.lp p a:hover,.lp li a:hover,.lp nav a:not([style*="border-radius"]):hover{background-size:100% 1.5px}
+
+/* Cards, glass panels, and beta notes: consistent spring lift and badge pop on hover. */
+.lp article[style*="border-radius"],.lp li.glass,.lp .glass-card{transition:transform .35s var(--spring),box-shadow .35s}
+.lp article[style*="border-radius"]:hover,.lp li.glass:hover,.lp .glass-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(var(--sh),.10)}
+.lp article[style*="border-radius"]:hover>span:first-child,.lp li.glass:hover>span:first-child{animation:lp-pop .5s var(--pop)}
+.lp .note{transition:transform .3s var(--spring),border-color .25s,background-color .25s}
+.lp article:hover .note,.lp .note:hover{border-color:var(--accent);transform:translateY(-1px)}
+@keyframes lp-pop{0%{transform:scale(1)}40%{transform:scale(1.18) rotate(-6deg)}100%{transform:none}}
+
+/* Hero real-app micro-animations: live Counting pulse + interactive dock pop (matching components.css). */
+@keyframes lp-pulse{0%,100%{box-shadow:0 0 0 0 rgba(46,125,69,.42)}60%{box-shadow:0 0 0 6px rgba(46,125,69,0)}}
+.lp .live-dot{animation:lp-pulse 2.2s ease-out infinite}
+.lp .hero-dock>span{transition:transform .22s var(--pop),background-color .2s,color .2s;border-radius:var(--r-tile);cursor:default}
+.lp .hero-dock>span:not([data-active]):hover{transform:translateY(-4px) scale(1.08);background:var(--tint2);color:var(--ink)}
+
+/* Setup guide sidebar links nudge gently on hover. */
+.lp .side-nav a{transition:transform .22s var(--spring),background-color .2s,color .2s;border-radius:var(--r-tile)}
+.lp .side-nav a:not([style*="background: var(--pri)"]):hover{transform:translateX(4px);background:var(--tint2)}
+
+/* Help: answers open smoothly, the plus turns into a cross. */
+.lp summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lp summary::-webkit-details-marker{display:none}
+.lp summary::after{content:"+";flex:none;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--tint2);color:var(--ink);font-size:22px;font-weight:500;transition:transform .4s var(--pop),background-color .2s}
+.lp details[open] summary::after{transform:rotate(135deg);background:var(--accent);color:var(--face)}
+.lp details::details-content{block-size:0;overflow:hidden;opacity:0;transition:block-size .45s var(--ease),opacity .35s,content-visibility .45s allow-discrete}
+.lp details[open]::details-content{block-size:auto;opacity:1}
+
+/* Sections rise in as they scroll into view (with subtle stagger across cards). */
+@supports (animation-timeline: view()){
+  @keyframes lp-reveal{from{opacity:0;transform:translateY(32px) scale(.98)}to{opacity:1;transform:none}}
+  .lp .reveal>*,.lp .reveal-self{animation:lp-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
+  .lp .reveal>*:nth-child(2){animation-range:entry 4% cover 30%}
+  .lp .reveal>*:nth-child(3){animation-range:entry 8% cover 34%}
+}
+
+/* Reduced motion: everything still, everything shown. */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .lp,.lp *,.lp *::after,.lp *::before,.lp details::details-content{animation:none !important;transition:none !important}
+  .lp .confetti{display:none}
+}

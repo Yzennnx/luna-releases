@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Luna: your download has started</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-autodownload>
+<div class="lp" style="width: 100%; background: var(--bg); color: var(--ink); font-family: 'Rubik', system-ui, sans-serif; font-size: 16px; line-height: 1.5; overflow: hidden">
+
+  <header style="max-width: 1160px; margin: 0 auto; padding: 20px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 20px">
+      <span class="pet-bob" aria-hidden="true" style="position: relative; width: 32px; height: 32px; background: var(--accent); display: block"><i class="eye" style="position: absolute; background: var(--face); left: 26%; top: 36%; width: 12%; height: 12%"></i><i class="eye" style="position: absolute; background: var(--face); left: 62%; top: 36%; width: 12%; height: 12%"></i><i style="position: absolute; background: var(--cheek); left: 8%; top: 58%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--cheek); left: 80%; top: 58%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--face); left: 40%; top: 64%; width: 22%; height: 6%"></i></span>
+      Luna
+    </a>
+    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+      <a href="index.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Home</a>
+      <a href="install.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Setup guide</a>
+      <a href="privacy.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Privacy</a>
+      <a href="report.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Report a bug</a>
+      <a href="index.html#download" style="margin-left: 8px; padding: 10px 18px; background: var(--pri); color: var(--onp); text-decoration: none; font-weight: 600; border-radius: var(--r-btn)">Download</a>
+    </nav>
+  </header>
+
+  <section style="position: relative; padding: clamp(40px, 7vw, 88px) 0 clamp(56px, 8vw, 104px)">
+    <div class="confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="clouds" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+      <div style="position: absolute; left: 6%; top: 80px; width: 180px; height: 40px; background: var(--near); box-shadow: 18px 10px 0 -4px var(--tint)"><div style="position: absolute; left: 14%; bottom: 100%; width: 40%; height: 80%; background: var(--near)"></div><div style="position: absolute; left: 50%; bottom: 100%; width: 32%; height: 45%; background: var(--near)"></div></div>
+      <div style="position: absolute; right: 8%; top: 220px; width: 210px; height: 46px; background: var(--tint)"><div style="position: absolute; left: 14%; bottom: 100%; width: 40%; height: 80%; background: var(--tint)"></div><div style="position: absolute; left: 50%; bottom: 100%; width: 32%; height: 45%; background: var(--tint)"></div></div>
+    </div>
+
+    <div style="position: relative; max-width: 760px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+      <span class="pet-jump" aria-hidden="true" style="position: relative; width: 96px; height: 96px; background: var(--accent); display: block"><i class="eye" style="position: absolute; background: var(--face); left: 24%; top: 34%; width: 14%; height: 8%"></i><i class="eye" style="position: absolute; background: var(--face); left: 62%; top: 34%; width: 14%; height: 8%"></i><i style="position: absolute; background: var(--cheek); left: 8%; top: 56%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--cheek); left: 80%; top: 56%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--face); left: 36%; top: 62%; width: 30%; height: 8%"></i></span>
+      <h1 style="margin: 0; font-size: clamp(36px, 5vw, 52px); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em">Your download has started</h1>
+      <div role="progressbar" aria-label="Download progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" style="width: min(360px, 100%); height: 8px; background: var(--tint2); overflow: hidden"><div class="fill" style="height: 100%; background: var(--accent)"></div></div>
+      <p class="after-fill" style="margin: 0; font-size: 18px; color: var(--mute)">Luna-Setup.exe. Nothing happening? <a href="https://github.com/Yzennnx/luna-releases/releases/latest/download/Luna-Setup.exe" style="color: var(--link); font-weight: 600">Download it again</a>.</p>
+
+      <ol class="reveal" style="margin: 16px 0 0; padding: 0; list-style: none; width: 100%; display: flex; flex-direction: column; gap: 12px; text-align: left">
+        <li class="glass" style="display: flex; gap: 16px; align-items: flex-start; border-radius: var(--r-card); padding: 20px">
+          <span style="flex: none; width: 32px; height: 32px; border-radius: var(--r-tile); display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--face); font-weight: 700">1</span>
+          <span style="display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 600; font-size: 17px">Open the file</b><span style="font-weight: 300; color: var(--mute)">If Windows says it protected your PC, choose <b>More info</b>, then <b>Run anyway</b>. The installer isn't signed yet.</span></span>
+        </li>
+        <li class="glass" style="display: flex; gap: 16px; align-items: flex-start; border-radius: var(--r-card); padding: 20px">
+          <span style="flex: none; width: 32px; height: 32px; border-radius: var(--r-tile); display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--face); font-weight: 700">2</span>
+          <span style="display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 600; font-size: 17px">Follow Luna's intro</b><span style="font-weight: 300; color: var(--mute)">It asks a few questions and fills your first lists. Luna then lives in the tray, by the clock.</span></span>
+        </li>
+        <li class="glass" style="display: flex; gap: 16px; align-items: flex-start; border-radius: var(--r-card); padding: 20px">
+          <span style="flex: none; width: 32px; height: 32px; border-radius: var(--r-tile); display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--face); font-weight: 700">3</span>
+          <span style="display: flex; flex-direction: column; gap: 10px"><b style="font-weight: 600; font-size: 17px">Add the beta browser extension</b><span style="font-weight: 300; color: var(--mute)">Download and unzip <b>Luna-Extension.zip</b>, open <b>chrome://extensions</b> (or Edge/Brave), turn on <b>Developer mode</b>, click <b>Load unpacked</b>, and enable <b>Allow in Incognito</b>. Then press <b>Connect browser</b> in Luna.</span>
+            <a href="https://github.com/Yzennnx/luna-releases/releases/latest/download/Luna-Extension.zip" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--surface); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 14px; border: 1px solid var(--cborder); border-radius: var(--r-btn)">Download Luna-Extension.zip</a>
+          </span>
+        </li>
+      </ol>
+
+      <div class="reveal-self glass" style="margin-top: 12px; width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; border-radius: var(--r-card); padding: 22px; text-align: left">
+        <img src="qr-android.svg" alt="QR code that opens the Android download" width="104" height="104" style="flex: none; width: 104px; height: 104px; border: 1px solid var(--cborder); border-radius: var(--r-ctrl)">
+        <span style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 600; font-size: 17px">Want Luna on your phone too?</b><span style="font-weight: 300; color: var(--mute)">Scan this with your phone's camera to get the Android app. On Android 13+, open <b>App info › ⋮ › Allow restricted settings</b> before turning on Guard or Notification access, then link from Luna › Settings › Link devices.</span></span>
+      </div>
+
+      <a href="install.html" style="margin-top: 8px; color: var(--link); font-weight: 600">Read the full setup guide</a>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid var(--line)">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--mute)">
+      <span>Luna · made by yzen</span>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 4px">
+        <a href="https://github.com/Yzennnx/luna-releases/releases" style="padding: 10px 12px; color: var(--mute)">All releases</a>
+        <a href="https://github.com/Yzennnx/luna-releases/releases" style="padding: 10px 12px; color: var(--mute)">GitHub</a>
+        <a href="privacy.html" style="padding: 10px 12px; color: var(--mute)">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<script type="module" src="site.js"></script>
+</body>
+</html>

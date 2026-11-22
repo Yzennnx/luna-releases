@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Luna: stay on task</title>
+<meta name="description" content="Luna blocks the apps and sites you picked on your PC, in your browser and on your phone, until the session is over.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="lp" style="width: 100%; background: var(--bg); color: var(--ink); font-family: 'Rubik', system-ui, sans-serif; font-size: 16px; line-height: 1.5; overflow: hidden">
+
+  <!-- Top bar: matches app's glass bar and 6px buttons -->
+  <header style="max-width: 1160px; margin: 0 auto; padding: 20px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+    <a href="#top" style="display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 20px">
+      <span class="pet-bob" aria-hidden="true" style="position: relative; width: 32px; height: 32px; background: var(--accent); display: block"><i class="eye" style="position: absolute; background: var(--face); left: 26%; top: 36%; width: 12%; height: 12%"></i><i class="eye" style="position: absolute; background: var(--face); left: 62%; top: 36%; width: 12%; height: 12%"></i><i style="position: absolute; background: var(--cheek); left: 8%; top: 58%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--cheek); left: 80%; top: 58%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--face); left: 40%; top: 64%; width: 22%; height: 6%"></i></span>
+      Luna
+    </a>
+    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+      <a href="index.html" aria-current="page" style="padding: 9px 14px; color: var(--ink); text-decoration: none; font-weight: 600; background: var(--glass); border-radius: var(--r-tile)">Home</a>
+      <a href="install.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Setup guide</a>
+      <a href="privacy.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Privacy</a>
+      <a href="report.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Report a bug</a>
+      <a href="#download" style="margin-left: 8px; padding: 10px 18px; background: var(--pri); color: var(--onp); text-decoration: none; font-weight: 600; border-radius: var(--r-btn)">Download</a>
+    </nav>
+  </header>
+
+  <!-- Hero: Daybreak stepped clouds (matching components.css) -->
+  <section id="top" style="position: relative; padding: clamp(32px, 6vw, 72px) 0 clamp(56px, 8vw, 104px)">
+    <div class="clouds" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+      <div style="position: absolute; left: 4%; top: 64px; width: 200px; height: 44px; background: var(--near); box-shadow: 18px 10px 0 -4px var(--far)"><div style="position: absolute; left: 14%; bottom: 100%; width: 40%; height: 80%; background: var(--near)"></div><div style="position: absolute; left: 50%; bottom: 100%; width: 32%; height: 45%; background: var(--near)"></div></div>
+      <div style="position: absolute; right: 3%; top: 40px; width: 160px; height: 36px; background: var(--near); box-shadow: 18px 10px 0 -4px var(--far)"><div style="position: absolute; left: 14%; bottom: 100%; width: 40%; height: 80%; background: var(--near)"></div><div style="position: absolute; left: 50%; bottom: 100%; width: 32%; height: 45%; background: var(--near)"></div></div>
+      <div style="position: absolute; left: 38%; bottom: 40px; width: 230px; height: 50px; background: var(--near); box-shadow: 18px 10px 0 -4px var(--far)"><div style="position: absolute; left: 14%; bottom: 100%; width: 40%; height: 80%; background: var(--near)"></div><div style="position: absolute; left: 50%; bottom: 100%; width: 32%; height: 45%; background: var(--near)"></div></div>
+    </div>
+
+    <div style="position: relative; max-width: 1160px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; gap: clamp(40px, 6vw, 72px)">
+      <div class="stagger" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+        <span style="align-self: flex-start; padding: 5px 10px; background: var(--glass); border: 1px solid var(--line); border-radius: var(--r-ctrl); font-size: 13px; font-weight: 500; color: var(--mute)">Early Access Beta · Windows, Android, Chrome, Edge &amp; Brave</span>
+        <h1 style="margin: 0; font-size: clamp(40px, 6vw, 62px); line-height: 1.05; font-weight: 700; letter-spacing: -0.02em">Stay on task.<br>Luna keeps the distractions out.</h1>
+        <p style="margin: 0; max-width: 520px; font-size: 17px; font-weight: 300; color: var(--mute)">Start a session and Luna blocks the apps and sites you picked, on your PC, in your browser and on your phone, until the time is up. A small pet walks across the timer so you can see how far you've come.</p>
+
+          <div data-visitor="pc" style="display: flex; flex-wrap: wrap; gap: 12px">
+            <a href="thanks.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; background: var(--pri); color: var(--onp); text-decoration: none; font-weight: 600; font-size: 16px; border-radius: var(--r-btn)">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+              Download for Windows
+            </a>
+            <a href="#phone" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 20px; background: var(--glass); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 16px; border: 1px solid var(--cborder); border-radius: var(--r-btn)">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="7" y="3" width="10" height="18" rx="2"></rect><path d="M11 18h2"></path></svg>
+              Get the Android app
+            </a>
+          </div>
+          <p data-visitor="pc" style="margin: 0; font-size: 13px; font-weight: 300; color: var(--mute)">Windows 10 or later · Beta testers get 3 months of Luna Plus free at launch.</p>
+          <div data-visitor="android" hidden style="display: flex; flex-wrap: wrap; gap: 12px">
+            <a href="https://github.com/Yzennnx/luna-releases/releases/latest/download/Luna.apk" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; background: var(--pri); color: var(--onp); text-decoration: none; font-weight: 600; font-size: 16px; border-radius: var(--r-btn); flex: 1 1 260px">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+              Download for Android
+            </a>
+            <a href="#download" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 20px; background: var(--glass); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 16px; border: 1px solid var(--cborder); border-radius: var(--r-btn); flex: 1 1 260px">Also on your PC</a>
+          </div>
+          <p data-visitor="android" hidden style="margin: 0; font-size: 13px; font-weight: 300; color: var(--mute)">APK · Android 7.0 or later. Not on Google Play yet · 3 months of Plus free for beta testers.</p>
+      </div>
+
+      <!-- Product picture: exact PC SessionActive + Phone Running UI tokens -->
+      <div style="flex: 1 1 460px; min-width: 0; position: relative; padding-bottom: 44px">
+        <div class="window-in" role="img" aria-label="Luna on a PC during a session: 24 minutes left, the pet walking across above the timer" style="background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-card); box-shadow: var(--sh-pop); overflow: hidden">
+          <!-- Window chrome -->
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 14px; background: var(--surface); border-bottom: 1px solid var(--line); font-size: 12px; color: var(--mute)">
+            <span style="font-weight: 600; color: var(--ink)">Luna</span>
+            <span style="display: flex; gap: 12px" aria-hidden="true"><span>—</span><span>☐</span><span>✕</span></span>
+          </div>
+          <!-- Real PC Active screen body -->
+          <div style="padding: 18px clamp(18px, 3vw, 28px) 14px; display: flex; flex-direction: column; gap: 14px">
+            <!-- .bar-top -->
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 13px">
+              <b style="font-size: 15px; font-weight: 700; color: var(--ink)">Lock in</b>
+              <span style="flex: 1"></span>
+              <span style="padding: 5px 10px; background: var(--glass); border: 1px solid var(--cborder); border-radius: var(--r-ctrl); font-size: 12px; font-weight: 500; color: var(--ink)">Make stricter</span>
+              <span style="padding: 5px 10px; background: var(--glass); border: 1px solid var(--cborder); border-radius: var(--r-ctrl); font-size: 12px; font-weight: 500; color: var(--mute)">Emergency exit</span>
+            </div>
+            <!-- Hero: pet walking above big clock (exact Hero.tsx) -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 6px 0 4px">
+              <div style="position: relative; width: 100%; height: 48px">
+                <div data-pet="width" style="position: absolute; left: 0; bottom: 0; height: 2px; width: 45.37%; opacity: 0; pointer-events: none"></div>
+                <span class="pet-walk" data-pet="left" style="position: absolute; left: 45.37%; bottom: 0; width: 44px; height: 44px; display: block"><span style="background: var(--accent)"><i class="eye" style="position: absolute; background: var(--face); left: 24%; top: 36%; width: 12%; height: 12%"></i><i class="eye" style="position: absolute; background: var(--face); left: 64%; top: 36%; width: 12%; height: 12%"></i><i style="position: absolute; background: var(--cheek); left: 10%; top: 56%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--cheek); left: 78%; top: 56%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--face); left: 36%; top: 66%; width: 28%; height: 6%"></i></span></span>
+              </div>
+              <div style="font-size: clamp(58px, 8vw, 88px); font-weight: 700; line-height: .95; letter-spacing: -0.03em; font-variant-numeric: tabular-nums"><span data-mm>24</span><span class="colon">:</span><span data-ss>13</span></div>
+              <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; font-size: 12px; color: var(--mute); margin-top: 4px">
+                <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--ink); font-weight: 600"><span class="live-dot" aria-hidden="true" style="width: 8px; height: 8px; background: var(--counting); display: inline-block"></span>Counting</span>
+                <span><b style="color: var(--ink)">left</b> of 50 min</span>
+                <span>ends by <b style="color: var(--ink)">3:45 PM</b></span>
+              </div>
+            </div>
+            <!-- .strip: exact glass 3-column facts bar with vertical dividers -->
+            <div class="glass" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); font-size: 11px; line-height: 1.45">
+              <div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 3px">
+                <span style="font-weight: 600; color: var(--mute); text-transform: uppercase; letter-spacing: .04em; font-size: 10px">Devices</span>
+                <span style="color: var(--ink)"><b>Desk PC</b> · Counting</span>
+                <span style="color: var(--mute); font-weight: 300">Phone · Locked</span>
+              </div>
+              <div style="padding: 10px 12px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 3px">
+                <span style="font-weight: 600; color: var(--mute); text-transform: uppercase; letter-spacing: .04em; font-size: 10px">Time added</span>
+                <span style="color: var(--mute); font-weight: 300">Nothing added so far.</span>
+              </div>
+              <div style="padding: 10px 12px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 3px">
+                <span style="font-weight: 600; color: var(--mute); text-transform: uppercase; letter-spacing: .04em; font-size: 10px">Today</span>
+                <span style="color: var(--ink)">1h 40m studied</span>
+                <span style="color: var(--mute); font-weight: 300">2 sessions</span>
+              </div>
+            </div>
+            <!-- Real floating PC dock (bar glass + shadow-dock + 5px active tile) -->
+            <div style="display: flex; justify-content: center; padding-top: 2px">
+              <div class="hero-dock" style="display: inline-flex; align-items: center; gap: 4px; padding: 5px 8px; background: var(--bar); border-radius: var(--r-card); box-shadow: var(--sh-dock); font-size: 11px; color: var(--mute)">
+                <span data-active style="padding: 4px 10px; border-radius: var(--r-tile); background: var(--pri); color: var(--onp); font-weight: 700">Session</span>
+                <span style="padding: 4px 8px">Lists</span>
+                <span style="padding: 4px 8px">Schedule</span>
+                <span style="padding: 4px 8px">History</span>
+                <span style="padding: 4px 8px">Settings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Real Phone Running screen (matches apps/mobile/src/core/theme.ts + Running.tsx) -->
+        <div class="phone-in" role="img" aria-label="Luna on an Android phone during the same session: Counting, 24 minutes left, phone locked" style="position: absolute; right: -8px; bottom: 0; width: 162px; height: 294px; background: var(--bg); border: 5px solid var(--frame); border-radius: 22px; box-shadow: var(--sh-pop); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; text-align: center">
+          <div style="padding: 12px 12px 0; display: flex; flex-direction: column; align-items: center; gap: 10px">
+            <span style="display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: var(--r-ctrl); background: var(--okbg); font-size: 10px; font-weight: 600; color: var(--counting)"><span class="live-dot" aria-hidden="true" style="width: 6px; height: 6px; border-radius: 999px; background: var(--counting)"></span>Counting</span>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 5px">
+              <span class="pet-bob" style="position: relative; width: 32px; height: 32px; background: var(--accent); display: block"><i class="eye" style="position: absolute; background: var(--face); left: 24%; top: 36%; width: 12%; height: 12%"></i><i class="eye" style="position: absolute; background: var(--face); left: 64%; top: 36%; width: 12%; height: 12%"></i><i style="position: absolute; background: var(--face); left: 36%; top: 66%; width: 28%; height: 6%"></i></span>
+              <span style="font-size: 32px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums"><span data-mm>24</span><span class="colon">:</span><span data-ss>13</span></span>
+              <span style="font-size: 10px; font-weight: 300; color: var(--mute)">left of 50 min</span>
+            </div>
+            <div class="glass" style="width: 100%; padding: 7px 9px; display: flex; flex-direction: column; gap: 5px; font-size: 9.5px; text-align: left">
+              <div style="display: flex; justify-content: space-between"><b style="color: var(--ink)">This phone</b><span style="color: var(--mute)">Locked</span></div>
+              <div style="height: 1px; background: var(--line)"></div>
+              <div style="display: flex; justify-content: space-between"><span style="color: var(--mute)">Desk PC</span><b style="color: var(--ink)">Counting</b></div>
+            </div>
+          </div>
+          <!-- Pinned bar -->
+          <div style="padding: 8px 10px; background: var(--bar); border-top: 1px solid var(--line)">
+            <span style="display: block; width: 100%; padding: 6px 0; background: var(--surface); border: 1px solid var(--cborder); border-radius: var(--r-btn); font-size: 10px; font-weight: 600; color: var(--ink)">Emergency exit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download: three steps (exact glass cards + 6px buttons + app note boxes) -->
+  <section id="download" style="background: var(--tint); padding: clamp(56px, 8vw, 96px) 0">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); display: flex; flex-direction: column; gap: 36px">
+      <div class="reveal-self" style="display: flex; flex-direction: column; gap: 10px; max-width: 680px">
+        <h2 style="margin: 0; font-size: clamp(28px, 4vw, 38px); line-height: 1.1; font-weight: 700">Set up in three steps</h2>
+        <p style="margin: 0; font-size: 16px; font-weight: 300; color: var(--mute)">Each part works on its own. Install the ones you need; link them and one session locks them all. Because Luna is in direct beta, each device asks you to approve a setting once.</p>
+      </div>
+      <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+
+        <article class="glass" style="border-radius: var(--r-card); padding: 24px; display: flex; flex-direction: column; gap: 14px">
+          <span style="width: 32px; height: 32px; border-radius: var(--r-tile); display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--face); font-weight: 700">1</span>
+          <h3 style="margin: 0; font-size: 19px; font-weight: 700">Install Luna on your PC</h3>
+          <p style="margin: 0; font-weight: 300; color: var(--mute)">The tray app runs your sessions and blocks programs. Start here.</p>
+          <a href="thanks.html" style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; background: var(--pri); color: var(--onp); text-decoration: none; font-weight: 600; border-radius: var(--r-btn)">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+            Download for Windows
+          </a>
+          <p class="note" style="margin: 0; padding: 11px 13px; font-size: 13px"><b>Windows warning:</b> The beta installer isn't signed yet. Choose <b>More info</b>, then <b>Run anyway</b>.</p>
+        </article>
+
+        <article class="glass" style="border-radius: var(--r-card); padding: 24px; display: flex; flex-direction: column; gap: 14px">
+          <span style="width: 32px; height: 32px; border-radius: var(--r-tile); display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--face); font-weight: 700">2</span>
+          <h3 style="margin: 0; font-size: 19px; font-weight: 700">Add the browser extension</h3>
+          <p style="margin: 0; font-weight: 300; color: var(--mute)">Blocks sites in Chrome, Edge and Brave. Then press <b>Connect browser</b> in Luna on your PC.</p>
+          <a href="https://github.com/Yzennnx/luna-releases/releases/latest/download/Luna-Extension.zip" style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; background: var(--surface); color: var(--ink); text-decoration: none; font-weight: 600; border: 1px solid var(--cborder); border-radius: var(--r-btn)">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+            Download extension (.zip)
+          </a>
+          <p class="note" style="margin: 0; padding: 11px 13px; font-size: 13px"><b>Manual beta load:</b> Unzip it, open <b>chrome://extensions</b> (or Edge/Brave), turn on <b>Developer mode</b>, click <b>Load unpacked</b>, and enable <b>Allow in Incognito</b>.</p>
+        </article>
+
+        <article id="phone" class="glass" style="border-radius: var(--r-card); padding: 24px; display: flex; flex-direction: column; gap: 14px">
+          <span style="width: 32px; height: 32px; border-radius: var(--r-tile); display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--face); font-weight: 700">3</span>
+          <h3 style="margin: 0; font-size: 19px; font-weight: 700">Put Luna on your phone</h3>
+            <div data-visitor="pc" style="display: flex; gap: 16px; align-items: center">
+              <img src="qr-android.svg" alt="QR code that opens the Android download" width="108" height="108" style="flex: none; width: 108px; height: 108px; border: 1px solid var(--cborder); border-radius: var(--r-ctrl)">
+              <p style="margin: 0; font-weight: 300; color: var(--mute)">Scan with your phone's camera to download the Android app.</p>
+            </div>
+            <a data-visitor="android" hidden href="https://github.com/Yzennnx/luna-releases/releases/latest/download/Luna.apk" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; background: var(--pri); color: var(--onp); text-decoration: none; font-weight: 600; border-radius: var(--r-btn)">Download for Android</a>
+            <p class="note" style="margin: 0; padding: 11px 13px; font-size: 13px"><b>Android settings:</b> Allow browser installs. On Android 13+, open <b>App info › ⋮ › Allow restricted settings</b> so Guard and Notification access can turn on.</p>
+          <p style="margin: 0; font-size: 14px; font-weight: 300; color: var(--mute)">To link it, open Luna on your PC › <b>Link devices</b> and scan the code shown there.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo video: remove the hidden attribute and paste a YouTube embed URL (https://www.youtube-nocookie.com/embed/VIDEO_ID) or a video file URL into the src below. -->
+  <section id="demo" hidden style="padding: clamp(56px, 8vw, 104px) 0 0">
+    <div class="reveal" style="max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); display: flex; flex-direction: column; gap: 20px">
+      <h2 style="margin: 0; font-size: clamp(30px, 4vw, 40px); line-height: 1.1; font-weight: 700">See it in action</h2>
+      <div style="position: relative; aspect-ratio: 16 / 9; background: var(--tint); border: 1.5px solid var(--cborder); border-radius: 18px; overflow: hidden">
+        <iframe src="" title="Luna demo video" loading="lazy" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- How a session works -->
+  <section id="how" style="padding: clamp(56px, 8vw, 104px) 0">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); display: flex; flex-direction: column; gap: 40px">
+      <h2 style="margin: 0; font-size: clamp(30px, 4vw, 40px); line-height: 1.1; font-weight: 700">How a session works</h2>
+      <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <span style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--tint2); color: var(--ink)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 7h14M5 12h14M5 17h14"></path></svg></span>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700">Pick what pulls you away</h3>
+          <p style="margin: 0; color: var(--mute)">Put apps, programs and sites on your lists once. Luna remembers them on every device you link.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <span style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--tint2); color: var(--ink)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700">Start a session</h3>
+          <p style="margin: 0; color: var(--mute)">Choose how long and how strict. Until the time is up, what's on your lists stays closed, on every linked device.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <span style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--tint2); color: var(--ink)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="4" y="5" width="16" height="15" rx="3"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg></span>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700">Make it a habit</h3>
+          <p style="margin: 0; color: var(--mute)">Set times in the Schedule and Luna asks when it's time. History shows how your weeks went.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section id="privacy" style="padding: 0 0 clamp(56px, 8vw, 104px)">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px)">
+      <div class="reveal-self" style="background: var(--pri); color: var(--onp); border-radius: var(--r-card); padding: clamp(28px, 5vw, 52px); display: flex; flex-wrap: wrap; gap: clamp(28px, 5vw, 56px)">
+        <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: clamp(28px, 3.5vw, 36px); line-height: 1.1; font-weight: 700">What Luna reads, and where it stays</h2>
+          <p style="margin: 0; color: var(--pmute)">To block something, Luna has to know it's open. Here is everything it looks at.</p>
+          <a href="privacy.html" style="align-self: flex-start; margin-top: 8px; color: var(--plink); font-weight: 600">Read the privacy policy</a>
+        </div>
+        <ul class="reveal" style="flex: 2 1 420px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px">
+          <li style="display: flex; gap: 14px"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; margin-top: 8px; background: var(--accent)"></span><span><b style="font-weight: 600">Which app or site is in front.</b> <span style="color: var(--pmute)">On Android this needs Usage access and Accessibility; Luna asks for each and says why.</span></span></li>
+          <li style="display: flex; gap: 14px"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; margin-top: 8px; background: var(--accent)"></span><span><b style="font-weight: 600">Page titles, only if you turn on the AI judge.</b> <span style="color: var(--pmute)">A model on your own PC reads them. Nothing goes to an AI service.</span></span></li>
+          <li style="display: flex; gap: 14px"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; margin-top: 8px; background: var(--accent)"></span><span><b style="font-weight: 600">Your lists, sessions and history stay on your devices.</b> <span style="color: var(--pmute)">Linking syncs them through Luna's server, hosted on Render.</span></span></li>
+          <li style="display: flex; gap: 14px"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; margin-top: 8px; background: var(--accent)"></span><span><b style="font-weight: 600">No ads and no tracking.</b></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Luna Plus: coming soon. The button only says thanks; counting taps comes with task 7.1c. -->
+  <section id="plus" style="padding: 0 0 clamp(56px, 8vw, 104px)">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px)">
+      <article class="reveal-self glass" style="border: 1px solid var(--line); border-radius: var(--r-card); padding: clamp(28px, 5vw, 52px); display: flex; flex-wrap: wrap; align-items: center; gap: clamp(28px, 5vw, 56px)">
+        <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 12px">
+          <span style="align-self: flex-start; padding: 5px 10px; background: var(--accent); color: var(--face); border-radius: var(--r-ctrl); font-size: 13px; font-weight: 600">Early access · Free during beta</span>
+          <h2 style="margin: 0; font-size: clamp(28px, 3.5vw, 36px); line-height: 1.1; font-weight: 700">Luna Plus</h2>
+          <p style="margin: 0; font-weight: 300; color: var(--mute)">Everything is free during the beta test, and early testers get 3 months of Plus free when it launches. Tell us you're interested and we'll build it with you in mind.</p>
+        </div>
+        <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; flex-wrap: wrap; gap: 12px">
+            <div style="flex: 1 1 140px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card)"><div style="font-size: 24px; font-weight: 700">$2.99</div><div style="font-size: 14px; font-weight: 300; color: var(--mute)">per month</div></div>
+            <div style="flex: 1 1 140px; padding: 16px 18px; background: var(--surface); border: 2px solid var(--accent); border-radius: var(--r-card)"><div style="font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--mute)">Best value</div><div style="font-size: 24px; font-weight: 700">$19.99</div><div style="font-size: 14px; font-weight: 300; color: var(--mute)">per year</div></div>
+          </div>
+          <button type="button" id="plus-btn" style="min-height: 46px; padding: 0 22px; background: var(--pri); color: var(--onp); border: 0; border-radius: var(--r-btn); font: inherit; font-weight: 600; cursor: pointer">I'm interested</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Help -->
+  <section id="help" style="padding: 0 0 clamp(56px, 8vw, 104px)">
+    <div class="reveal" style="max-width: 760px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); display: flex; flex-direction: column; gap: 20px">
+      <h2 style="margin: 0; font-size: clamp(28px, 3.5vw, 36px); line-height: 1.1; font-weight: 700">Help</h2>
+      <p style="margin: 0; color: var(--mute)">Step-by-step pictures for every part are in the <a href="install.html" style="color: var(--link); font-weight: 600">setup guide</a>.</p>
+      <details style="border-bottom: 1px solid var(--line); padding: 16px 0">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 18px; min-height: 28px">Windows says it protected my PC</summary>
+        <p style="margin: 10px 0 0; color: var(--mute)">The installer isn't signed yet, so Windows doesn't know it. Choose More info, then Run anyway.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--line); padding: 16px 0">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 18px; min-height: 28px">My phone won't install the app</summary>
+        <p style="margin: 10px 0 0; color: var(--mute)">Luna isn't on Google Play yet. When your phone asks, allow your browser to install apps (and tap Install anyway if Play Protect warns), then open the downloaded file again.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--line); padding: 16px 0">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 18px; min-height: 28px">Android says "Restricted setting" for Accessibility or Notifications</summary>
+        <p style="margin: 10px 0 0; color: var(--mute)">Android 13 and later blocks Accessibility and Notification access for apps installed outside Google Play until you unlock them once. Open <b>App info</b> for Luna, tap <b>⋮ › Allow restricted settings</b>, then return to Luna setup.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--line); padding: 16px 0">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 18px; min-height: 28px">How do I load the beta browser extension?</summary>
+        <p style="margin: 10px 0 0; color: var(--mute)">Download and unzip <b>Luna-Extension.zip</b>, open <b>chrome://extensions</b> (or <b>edge://extensions</b> / <b>brave://extensions</b>), turn on <b>Developer mode</b>, click <b>Load unpacked</b>, pick the unzipped folder, and enable <b>Allow in Incognito</b>. Then press <b>Connect browser</b> in Luna on your PC.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--line); padding: 16px 0">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 18px; min-height: 28px">Do I need all three?</summary>
+        <p style="margin: 10px 0 0; color: var(--mute)">No. The PC app and the phone app each work alone. The browser extension needs the PC app. Link them so one session locks everything.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--line); padding: 16px 0">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 18px; min-height: 28px">How do I link my phone and PC?</summary>
+        <p style="margin: 10px 0 0; color: var(--mute)">On your PC open Luna › Settings › Link devices. On your phone tap Scan QR code and point it at the code.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid var(--line)">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--mute)">
+      <span>Luna · made by yzen</span>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 4px">
+        <a href="https://github.com/Yzennnx/luna-releases/releases" style="padding: 10px 12px; color: var(--mute)">All releases</a>
+        <a href="https://github.com/Yzennnx/luna-releases/releases" style="padding: 10px 12px; color: var(--mute)">GitHub</a>
+        <a href="install.html" style="padding: 10px 12px; color: var(--mute)">Setup guide</a>
+        <a href="privacy.html" style="padding: 10px 12px; color: var(--mute)">Privacy</a>
+        <a href="report.html" style="padding: 10px 12px; color: var(--mute)">Report a bug</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<script type="module" src="site.js"></script>
+</body>
+</html>

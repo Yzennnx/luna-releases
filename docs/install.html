@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Luna setup guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="lp" style="width: 100%; background: var(--bg); color: var(--ink); font-family: 'Rubik', system-ui, sans-serif; font-size: 16px; line-height: 1.55; overflow: hidden">
+
+  <header style="max-width: 1160px; margin: 0 auto; padding: 20px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 20px">
+      <span class="pet-bob" aria-hidden="true" style="position: relative; width: 32px; height: 32px; background: var(--accent); display: block"><i class="eye" style="position: absolute; background: var(--face); left: 26%; top: 36%; width: 12%; height: 12%"></i><i class="eye" style="position: absolute; background: var(--face); left: 62%; top: 36%; width: 12%; height: 12%"></i><i style="position: absolute; background: var(--cheek); left: 8%; top: 58%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--cheek); left: 80%; top: 58%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--face); left: 40%; top: 64%; width: 22%; height: 6%"></i></span>
+      Luna
+    </a>
+    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+      <a href="index.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Home</a>
+      <a href="install.html" aria-current="page" style="padding: 9px 14px; color: var(--ink); text-decoration: none; font-weight: 600; background: var(--glass); border-radius: var(--r-tile)">Setup guide</a>
+      <a href="privacy.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Privacy</a>
+      <a href="report.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Report a bug</a>
+      <a href="index.html#download" style="margin-left: 8px; padding: 10px 18px; background: var(--pri); color: var(--onp); text-decoration: none; font-weight: 600; border-radius: var(--r-btn)">Download</a>
+    </nav>
+  </header>
+
+  <div class="stagger" style="max-width: 1160px; margin: 0 auto; padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 10px">
+    <h1 style="margin: 0; font-size: clamp(36px, 5vw, 52px); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em">Setup guide</h1>
+    <p style="margin: 0; font-size: 17px; font-weight: 300; color: var(--mute); max-width: 640px">Everything from download to your first linked session. About 10 minutes for all three parts.</p>
+  </div>
+
+  <div style="max-width: 1160px; margin: 0 auto; padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 48px) clamp(56px, 8vw, 104px); display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 64px); align-items: flex-start">
+
+    <nav aria-label="On this page" class="glass side-nav" style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px; padding: 14px; border-radius: var(--r-card)">
+      <span style="padding: 6px 12px; font-size: 12px; font-weight: 600; color: var(--mute); text-transform: uppercase; letter-spacing: .04em">On this page</span>
+      <a href="#pc" style="padding: 9px 12px; color: var(--onp); text-decoration: none; font-weight: 600; background: var(--pri); border-radius: var(--r-tile)">1. Your PC</a>
+      <a href="#browser" style="padding: 9px 12px; color: var(--ink); text-decoration: none; font-weight: 500">2. Your browser</a>
+      <a href="#phone" style="padding: 9px 12px; color: var(--ink); text-decoration: none; font-weight: 500">3. Your phone</a>
+      <a href="#link" style="padding: 9px 12px; color: var(--ink); text-decoration: none; font-weight: 500">4. Link them</a>
+      <a href="#update" style="padding: 9px 12px; color: var(--ink); text-decoration: none; font-weight: 500">Updating and removing</a>
+    </nav>
+
+    <main class="reveal" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 56px">
+
+      <section id="pc" style="display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700">1. Your PC</h2>
+        <p style="margin: 0; color: var(--mute)">Windows 10 or later. The PC app runs your sessions and blocks programs.</p>
+        <ol style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px">
+          <li><a href="thanks.html" style="color: var(--link); font-weight: 600">Download Luna for Windows</a> and open the file.</li>
+          <li>If Windows shows <b>Windows protected your PC</b>, choose <b>More info</b>, then <b>Run anyway</b>. The installer isn't signed yet, so Windows doesn't recognise it.</li>
+          <li>Luna opens its intro: a few questions, your first lists, and a recovery code if you pick a strict level. Keep that code somewhere safe.</li>
+          <li>Luna then lives in the tray by the clock. Click the pet to open it.</li>
+        </ol>
+        <div role="img" aria-label="Screenshot placeholder: the Windows protected your PC dialog with More info highlighted" style="height: 220px; background: var(--tint); border: 1.5px dashed var(--cborder); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--mute); font-size: 14px">[Screenshot: Windows SmartScreen › More info › Run anyway]</div>
+      </section>
+
+      <section id="browser" style="display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700">2. Your browser</h2>
+        <p style="margin: 0; color: var(--mute)">Chrome, Edge or Brave. The extension blocks sites and needs the PC app.</p>
+        <ol style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px">
+          <li><a href="https://github.com/Yzennnx/luna-releases/releases/latest/download/Luna-Extension.zip" style="color: var(--link); font-weight: 600">Download Luna-Extension.zip</a> and extract it to a folder you will keep.</li>
+          <li>Open <b>chrome://extensions</b> (or <b>edge://extensions</b> / <b>brave://extensions</b>), turn on <b>Developer mode</b>, click <b>Load unpacked</b>, and choose the extracted folder.</li>
+          <li>In Luna on your PC, open <b>Settings › Browser extension</b> and press <b>Connect browser</b>. Your browser opens a tab, and Luna connects by itself.</li>
+          <li>Using another browser than your default? Open the extension's popup there and type the 6-digit code Luna shows instead.</li>
+        </ol>
+        <p class="note" style="margin: 0; padding: 14px 16px"><b>Important settings:</b> Keep the extracted folder in place while testing, and open the extension's <b>Details</b> to turn on <b>Allow in Incognito</b> (Chrome/Brave) or <b>Allow in InPrivate</b> (Edge) so private windows are covered too.</p>
+      </section>
+
+      <section id="phone" style="display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700">3. Your phone</h2>
+        <p style="margin: 0; color: var(--mute)">Android 7.0 or later. Luna isn't on Google Play yet, so you install it from a file.</p>
+        <ol style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px">
+          <li>On your phone, <a href="https://github.com/Yzennnx/luna-releases/releases/latest/download/Luna.apk" style="color: var(--link); font-weight: 600">download the Android app</a>, or scan the QR code on the <a href="index.html#phone" style="color: var(--link); font-weight: 600">download page</a>.</li>
+          <li>Open the file. When Android asks, allow your browser to <b>install unknown apps</b> (and tap <b>Install anyway</b> if Play Protect warns on a new beta APK), then tap <b>Install</b>.</li>
+          <li>Luna's setup asks for a few permissions, one screen each, and says why before every one.</li>
+        </ol>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+          <div class="glass glass-card" style="padding: 16px; border-radius: var(--r-card); display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 600">For every session</b><span style="color: var(--mute); font-weight: 300; font-size: 14px">Usage access, Display over other apps, Notifications, no battery limits, and auto-start.</span></div>
+          <div class="glass glass-card" style="padding: 16px; border-radius: var(--r-card); display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 600">To hold notifications</b><span style="color: var(--mute); font-weight: 300; font-size: 14px">Notification access and Do Not Disturb access.</span></div>
+          <div class="glass glass-card" style="padding: 16px; border-radius: var(--r-card); display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 600">For the Guard level</b><span style="color: var(--mute); font-weight: 300; font-size: 14px">Accessibility (Luna Guard) and Device admin.</span></div>
+        </div>
+        <p class="note" style="margin: 0; padding: 14px 16px"><b>Android 13–15 Restricted setting:</b> Accessibility (Guard) and Notification access may show <b>Restricted setting</b>. Open <b>App info</b> for Luna, tap <b>⋮ › Allow restricted settings</b>, then return to Luna and turn them on.</p>
+      </section>
+
+      <section id="link" style="display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700">4. Link them</h2>
+        <p style="margin: 0; color: var(--mute)">Linked devices share your lists, and one session locks them all.</p>
+        <ol style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px">
+          <li>On your PC, open <b>Settings › Devices and sync</b> and press <b>Show QR/code</b>. A QR code appears.</li>
+          <li>On your phone, open <b>Settings › Link devices</b>, tap <b>Scan QR code</b> and point it at the PC screen.</li>
+          <li>No camera? Tap <b>Enter a code</b> and type the code shown under the QR.</li>
+        </ol>
+        <div role="img" aria-label="Screenshot placeholder: the PC Link devices page with the QR code next to the phone scanner" style="height: 220px; background: var(--tint); border: 1.5px dashed var(--cborder); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--mute); font-size: 14px">[Screenshot: PC Link devices with the QR, phone scanning it]</div>
+      </section>
+
+      <section id="update" style="display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700">Updating and removing</h2>
+        <p style="margin: 0; color: var(--mute)"><b style="color: var(--ink)">Updating:</b> Windows downloads updates in the background and offers <b>Restart to update</b> from the tray. Android shows a new-version notice on Start linking to the latest APK. Your lists, sessions and history stay.</p>
+        <p style="margin: 0; color: var(--mute)"><b style="color: var(--ink)">Removing:</b> end any running session first; Luna stops itself being removed during one. On the phone, turn off Device admin for Luna in Settings before uninstalling.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer style="border-top: 1px solid var(--line)">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--mute)">
+      <span>Luna · made by yzen</span>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 4px">
+        <a href="https://github.com/Yzennnx/luna-releases/releases" style="padding: 10px 12px; color: var(--mute)">All releases</a>
+        <a href="https://github.com/Yzennnx/luna-releases/releases" style="padding: 10px 12px; color: var(--mute)">GitHub</a>
+        <a href="privacy.html" style="padding: 10px 12px; color: var(--mute)">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<script type="module" src="site.js"></script>
+</body>
+</html>
