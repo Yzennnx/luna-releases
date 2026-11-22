@@ -35,10 +35,49 @@ export function renderVals(left) {
   };
 }
 
+// Returns true when a clicked link navigates to another page on the same site (eligible for exit transition fallback).
+export function isInternalPageLink(href, baseUrl) {
+  if (!href || href.startsWith('#') || /^(mailto:|tel:|javascript:)/i.test(href)) return false;
+  try {
+    const base = new URL(baseUrl);
+    const dest = new URL(href, base);
+    if (dest.origin !== base.origin) return false;
+    if (dest.pathname === base.pathname && dest.search === base.search) return false;
+    return /\.html$/i.test(dest.pathname) || dest.pathname.endsWith('/');
+  } catch {
+    return false;
+  }
+}
+
 if (typeof document !== 'undefined') {
   const visitor = visitorFrom(navigator.userAgent);
   for (const el of document.querySelectorAll('[data-visitor]')) {
     el.hidden = el.dataset.visitor !== visitor;
+  }
+
+  const lp = document.querySelector('.lp');
+
+  // Pause non-essential ambient loops & timer ticks when the tab is hidden.
+  const syncVisibility = () => {
+    if (lp) lp.classList.toggle('lp-paused', document.hidden);
+  };
+  document.addEventListener('visibilitychange', syncVisibility);
+  syncVisibility();
+
+  // Fallback page-exit transition for browsers without cross-document @view-transition (e.g. Firefox).
+  const hasNativeVT = typeof window !== 'undefined' && 'onpageswap' in window && typeof CSS !== 'undefined' && CSS.supports?.('view-transition-name', 'luna-header');
+  const reducedMotion = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  if (lp && !hasNativeVT && !reducedMotion) {
+    window.addEventListener('pageshow', () => lp.classList.remove('lp-leaving'));
+    document.addEventListener('click', (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target instanceof Element ? e.target.closest('a[href]') : null;
+      if (!a || a.target === '_blank' || a.hasAttribute('download')) return;
+      if (!isInternalPageLink(a.getAttribute('href'), location.href)) return;
+      e.preventDefault();
+      lp.classList.add('lp-leaving');
+      setTimeout(() => { location.href = a.href; }, 170);
+    });
   }
 
   const paint = (left) => {
@@ -52,7 +91,9 @@ if (typeof document !== 'undefined') {
   if (timer) {
     let left = START_LEFT;
     paint(left);
-    setInterval(() => paint((left = nextLeft(left))), 1000);
+    setInterval(() => {
+      if (!document.hidden) paint((left = nextLeft(left)));
+    }, 1000);
   }
 
   // Luna Plus: one anonymous tap is counted (no id, no cookie). The reply is ignored, so the button says thanks either way.
@@ -68,7 +109,6 @@ if (typeof document !== 'undefined') {
   }
 
   // Scroll reveal: uses IntersectionObserver + bottom-of-page fallback so elements near the bottom never stall at low opacity.
-  const lp = document.querySelector('.lp');
   const targets = [...document.querySelectorAll('.lp .reveal > *, .lp .reveal-self')];
   if (lp && targets.length && typeof IntersectionObserver !== 'undefined') {
     const show = (el) => el.classList.add('is-shown');
