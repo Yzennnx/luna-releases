@@ -67,6 +67,38 @@ if (typeof document !== 'undefined') {
     });
   }
 
+  // Scroll reveal: uses IntersectionObserver + bottom-of-page fallback so elements near the bottom never stall at low opacity.
+  const lp = document.querySelector('.lp');
+  const targets = [...document.querySelectorAll('.lp .reveal > *, .lp .reveal-self')];
+  if (lp && targets.length && typeof IntersectionObserver !== 'undefined') {
+    const show = (el) => el.classList.add('is-shown');
+    for (const el of targets) {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.96) show(el);
+    }
+    lp.classList.add('lp-anim');
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            show(entry.target);
+            io.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.01, rootMargin: '0px 0px 40px 0px' },
+    );
+    for (const el of targets) {
+      if (!el.classList.contains('is-shown')) io.observe(el);
+    }
+    const revealAtBottom = () => {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24) {
+        for (const el of targets) show(el);
+        window.removeEventListener('scroll', revealAtBottom);
+      }
+    };
+    window.addEventListener('scroll', revealAtBottom, { passive: true });
+  }
+
   // thanks.html: the Windows installer starts downloading as the page opens.
   if (document.body.dataset.autodownload !== undefined) {
     const a = document.createElement('a');

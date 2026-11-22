@@ -113,13 +113,12 @@ body{margin:0}
 .lp details::details-content{block-size:0;overflow:hidden;opacity:0;transition:block-size .45s var(--ease),opacity .35s,content-visibility .45s allow-discrete}
 .lp details[open]::details-content{block-size:auto;opacity:1}
 
-/* Sections rise in as they scroll into view (with subtle stagger across cards). */
-@supports (animation-timeline: view()){
-  @keyframes lp-reveal{from{opacity:0;transform:translateY(32px) scale(.98)}to{opacity:1;transform:none}}
-  .lp .reveal>*,.lp .reveal-self{animation:lp-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
-  .lp .reveal>*:nth-child(2){animation-range:entry 4% cover 30%}
-  .lp .reveal>*:nth-child(3){animation-range:entry 8% cover 34%}
-}
+/* Sections rise in as they enter the viewport (driven by IntersectionObserver in site.js so bottom sections never stall). */
+.lp.lp-anim .reveal>*:not(.is-shown),.lp.lp-anim .reveal-self:not(.is-shown){opacity:0;transform:translateY(24px) scale(.985)}
+.lp.lp-anim .reveal>*,.lp.lp-anim .reveal-self{transition:opacity .55s var(--ease),transform .6s var(--spring)}
+.lp.lp-anim .reveal>*:nth-child(2){transition-delay:.05s}
+.lp.lp-anim .reveal>*:nth-child(3){transition-delay:.1s}
+.lp.lp-anim .reveal>*.is-shown,.lp.lp-anim .reveal-self.is-shown{opacity:1;transform:none}
 
 /* Reduced motion: everything still, everything shown. */
 @media (prefers-reduced-motion: reduce){

@@ -10,14 +10,14 @@
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<div class="lp" style="width: 100%; background: var(--bg); color: var(--ink); font-family: 'Rubik', system-ui, sans-serif; font-size: 17px; line-height: 1.6; overflow: hidden">
+<div class="lp" style="width: 100%; background: var(--bg); color: var(--ink); font-family: 'Rubik', system-ui, sans-serif; font-size: 16px; line-height: 1.6; overflow: hidden">
 
   <header style="max-width: 1160px; margin: 0 auto; padding: 20px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
     <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 20px">
       <span class="pet-bob" aria-hidden="true" style="position: relative; width: 32px; height: 32px; background: var(--accent); display: block"><i class="eye" style="position: absolute; background: var(--face); left: 26%; top: 36%; width: 12%; height: 12%"></i><i class="eye" style="position: absolute; background: var(--face); left: 62%; top: 36%; width: 12%; height: 12%"></i><i style="position: absolute; background: var(--cheek); left: 8%; top: 58%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--cheek); left: 80%; top: 58%; width: 12%; height: 7%"></i><i style="position: absolute; background: var(--face); left: 40%; top: 64%; width: 22%; height: 6%"></i></span>
       Luna
     </a>
-    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 16px">
+    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
       <a href="index.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Home</a>
       <a href="install.html" style="padding: 9px 14px; color: var(--mute); text-decoration: none; font-weight: 500">Setup guide</a>
       <a href="privacy.html" aria-current="page" style="padding: 9px 14px; color: var(--ink); text-decoration: none; font-weight: 600; background: var(--glass); border-radius: var(--r-tile)">Privacy</a>
@@ -26,71 +26,89 @@
     </nav>
   </header>
 
-  <article class="reveal" style="max-width: 760px; margin: 0 auto; padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 48px) clamp(56px, 8vw, 104px); display: flex; flex-direction: column; gap: 40px">
-    <div style="display: flex; flex-direction: column; gap: 8px">
-      <h1 style="margin: 0; font-size: clamp(36px, 5vw, 52px); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em">Privacy policy</h1>
-      <p style="margin: 0; color: var(--mute); font-size: 15px">Last updated 2026-11-06</p>
-    </div>
+  <div class="stagger" style="max-width: 1160px; margin: 0 auto; padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 10px">
+    <span style="align-self: flex-start; padding: 5px 10px; background: var(--glass); border: 1px solid var(--line); border-radius: var(--r-ctrl); font-size: 13px; font-weight: 500; color: var(--mute)">Last updated 2026-11-22 · Beta v1.0</span>
+    <h1 style="margin: 0; font-size: clamp(36px, 5vw, 52px); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em">Privacy policy</h1>
+    <p style="margin: 0; font-size: 17px; font-weight: 300; color: var(--mute); max-width: 660px">Plain language on what Luna reads, what stays on your devices, and what touches the server when you link them.</p>
+  </div>
 
-    <div class="glass" style="border-radius: var(--r-card); padding: clamp(20px, 4vw, 32px); display: flex; flex-direction: column; gap: 12px">
-      <h2 style="margin: 0; font-size: 22px; font-weight: 700">The short version</h2>
-      <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px">
-        <li>Luna looks at which app or site is in front so it can block it. It does not look at what's inside.</li>
-        <li>Everything stays on your devices unless you link them. Then it syncs through the server you linked to.</li>
-        <li>No screenshots, no keystrokes, no ads, no analytics.</li>
-      </ul>
-    </div>
+  <div style="max-width: 1160px; margin: 0 auto; padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 48px) clamp(56px, 8vw, 104px); display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 64px); align-items: flex-start">
 
-    <section style="display: flex; flex-direction: column; gap: 12px">
-      <h2 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 700">On your PC</h2>
-      <p style="margin: 0">Every 5 seconds during a session, Luna checks which program or site is in front and how long since you last used the mouse or keyboard. It keeps spans of study time from that, not each check.</p>
-      <p style="margin: 0"><b style="font-weight: 600">Window and page titles</b> are read only when you turn on the AI judge for a session, and only for programs or sites your lists leave open to judgment. A model on your own PC reads the title. It is not stored and not sent anywhere.</p>
-    </section>
+    <nav aria-label="On this page" class="glass side-nav" style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px; padding: 14px; border-radius: var(--r-card)">
+      <span style="padding: 6px 12px; font-size: 12px; font-weight: 600; color: var(--mute); text-transform: uppercase; letter-spacing: .04em">On this page</span>
+      <a href="#short" style="padding: 9px 12px; color: var(--onp); text-decoration: none; font-weight: 600; background: var(--pri); border-radius: var(--r-tile)">The short version</a>
+      <a href="#pc-browser" style="padding: 9px 12px; color: var(--ink); text-decoration: none; font-weight: 500">PC &amp; browser</a>
+      <a href="#phone-perms" style="padding: 9px 12px; color: var(--ink); text-decoration: none; font-weight: 500">On your phone</a>
+      <a href="#storage" style="padding: 9px 12px; color: var(--ink); text-decoration: none; font-weight: 500">Storage &amp; sync</a>
+      <a href="#counts" style="padding: 9px 12px; color: var(--ink); text-decoration: none; font-weight: 500">Counts &amp; feedback</a>
+      <a href="#delete" style="padding: 9px 12px; color: var(--ink); text-decoration: none; font-weight: 500">Deleting your data</a>
+    </nav>
 
-    <section style="display: flex; flex-direction: column; gap: 12px">
-      <h2 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 700">In your browser</h2>
-      <p style="margin: 0">The extension tells Luna on the same PC which site is in the active tab, its page title, and whether it is playing sound. It sends this only to Luna on your PC, over a connection that never leaves the computer.</p>
-    </section>
+    <main class="reveal" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 44px">
 
-    <section style="display: flex; flex-direction: column; gap: 12px">
-      <h2 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 700">On your phone</h2>
-      <p style="margin: 0">Luna asks for each permission on its own screen and says why first.</p>
-      <div style="display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 14px; overflow: hidden">
-        <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Usage access</b><span style="flex: 2 1 280px; color: var(--mute)">Which app is in front.</span></div>
-        <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Display over other apps</b><span style="flex: 2 1 280px; color: var(--mute)">Shows the block screen over a blocked app.</span></div>
-        <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Notification access</b><span style="flex: 2 1 280px; color: var(--mute)">Holds notifications during a session and shows them at your break. Held notifications (app, title, text, time; at most 200) stay on the phone and are never synced.</span></div>
-        <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Accessibility (Guard level only)</b><span style="flex: 2 1 280px; color: var(--mute)">Sends you back from blocked apps, reads the browser's address bar to block sites, and blocks the Settings pages that would switch Luna off.</span></div>
-        <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px"><b style="flex: 1 1 200px; font-weight: 600">Device admin (Guard level only)</b><span style="flex: 2 1 280px; color: var(--mute)">Stops Luna being uninstalled during a session. It reads nothing.</span></div>
-      </div>
-    </section>
+      <section id="short" style="background: var(--pri); color: var(--onp); border-radius: var(--r-card); padding: clamp(22px, 4vw, 32px); display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 24px; font-weight: 700">The short version</h2>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+          <li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 9px; height: 9px; margin-top: 8px; background: var(--accent)"></span><span><b>Only what's in front.</b> <span style="color: var(--pmute)">Luna checks which app or site is active so it can block it. It never looks inside your apps, chats, or files.</span></span></li>
+          <li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 9px; height: 9px; margin-top: 8px; background: var(--accent)"></span><span><b>Local first.</b> <span style="color: var(--pmute)">Everything stays on your devices unless you link them. Linked devices sync through Luna's server.</span></span></li>
+          <li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 9px; height: 9px; margin-top: 8px; background: var(--accent)"></span><span><b>No surveillance or ads.</b> <span style="color: var(--pmute)">No screenshots, no keystrokes, no ads, and no third-party analytics.</span></span></li>
+        </ul>
+      </section>
 
-    <section style="display: flex; flex-direction: column; gap: 12px">
-      <h2 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 700">What Luna keeps</h2>
-      <p style="margin: 0">Your lists, builds, schedule, sessions and the blocked tries in each session. After 90 days, a session's blocked tries are replaced by its totals. Totals stay so History can show your weeks.</p>
-    </section>
+      <section id="pc-browser" style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 700">PC &amp; browser</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+          <article class="glass glass-card" style="padding: 20px 22px; border: 1px solid var(--line); border-radius: var(--r-card); display: flex; flex-direction: column; gap: 8px">
+            <h3 style="margin: 0; font-size: 18px; font-weight: 700">On your PC</h3>
+            <p style="margin: 0; color: var(--mute); font-weight: 300">Every 5 seconds during a session, Luna checks which program or site is in front and how long since you last used the mouse or keyboard. It stores spans of study time, not individual checks.</p>
+            <p style="margin: 0; color: var(--mute); font-weight: 300"><b style="color: var(--ink); font-weight: 600">Window &amp; page titles</b> are read only when you turn on the AI judge for a session. A local model on your own PC reads the title — it is never stored or sent off your machine.</p>
+          </article>
+          <article class="glass glass-card" style="padding: 20px 22px; border: 1px solid var(--line); border-radius: var(--r-card); display: flex; flex-direction: column; gap: 8px">
+            <h3 style="margin: 0; font-size: 18px; font-weight: 700">In your browser</h3>
+            <p style="margin: 0; color: var(--mute); font-weight: 300">The extension tells Luna on the same PC which site is in the active tab, its page title, and whether it is playing sound. It sends this only over a local connection that never leaves your computer.</p>
+          </article>
+        </div>
+      </section>
 
-    <section style="display: flex; flex-direction: column; gap: 12px">
-      <h2 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 700">What Luna counts</h2>
-      <p style="margin: 0">Once a week, the PC and phone apps send Luna's server a random number the app made for itself, "Windows" or "Android", and the app version. That is how Luna learns how many installs are in use and how many come back. It is not linked to an account, a name, your sessions or your lists, and the server keeps no address for it. Turn it off with Count this install in Settings.</p>
-      <p style="margin: 0">Tapping Luna Plus on this website adds one to a tally, with nothing about you.</p>
-    </section>
+      <section id="phone-perms" style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 700">On your phone</h2>
+        <p style="margin: 0; color: var(--mute)">Luna asks for each permission on its own screen and explains what it reads, does, and keeps first.</p>
+        <div class="glass" style="display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden">
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Usage access</b><span style="flex: 2 1 280px; color: var(--mute); font-weight: 300">Sees which app is in front so Luna knows when you leave your allowlist.</span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Display over other apps</b><span style="flex: 2 1 280px; color: var(--mute); font-weight: 300">Shows the block screen, Nudge card, or Away cover over a blocked app. Reads nothing.</span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Notifications</b><span style="flex: 2 1 280px; color: var(--mute); font-weight: 300">Shows a countdown notification so Android keeps the session lock running.</span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Notification access</b><span style="flex: 2 1 280px; color: var(--mute); font-weight: 300">Holds notifications during work rounds and returns them at your break. Held notifications (app, title, text, time; at most 200) stay on the phone and are never synced.</span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Do Not Disturb access</b><span style="flex: 2 1 280px; color: var(--mute); font-weight: 300">Quiets the phone during work rounds while allowing calls and texts from your Android starred contacts. Luna never reads your contacts.</span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--line)"><b style="flex: 1 1 200px; font-weight: 600">Accessibility (Guard level only)</b><span style="flex: 2 1 280px; color: var(--mute); font-weight: 300">Sends you Home from blocked apps, reads the browser's address bar to block sites, and blocks the Settings pages that would switch Luna off.</span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 14px 18px"><b style="flex: 1 1 200px; font-weight: 600">Device admin (Guard level only)</b><span style="flex: 2 1 280px; color: var(--mute); font-weight: 300">Stops Luna being uninstalled during a session. It reads nothing.</span></div>
+        </div>
+      </section>
 
-    <section style="display: flex; flex-direction: column; gap: 12px">
-      <h2 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 700">When you link devices</h2>
-      <p style="margin: 0">Linked devices sync what Luna keeps through Luna's server, hosted on Render. Each device gets its own key, stored only as a hash on the server, and you can remove a device at any time from Link devices. The server deletes blocked tries 120 days after they happened, once the session's totals are saved.</p>
-      <p style="margin: 0">Held notifications, titles and the AI judge's verdicts are never synced.</p>
-    </section>
+      <section id="storage" style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 700">Storage &amp; device sync</h2>
+        <article class="glass glass-card" style="padding: 20px 22px; border: 1px solid var(--line); border-radius: var(--r-card); display: flex; flex-direction: column; gap: 10px">
+          <p style="margin: 0; color: var(--mute); font-weight: 300"><b style="color: var(--ink); font-weight: 600">What Luna keeps:</b> Your lists, builds, schedule, sessions, and blocked tries in each session. After 90 days, a session's blocked tries are replaced by its totals so History can still show your weeks.</p>
+          <p style="margin: 0; color: var(--mute); font-weight: 300"><b style="color: var(--ink); font-weight: 600">When you link devices:</b> Linked devices sync through Luna's server, hosted on Render. Each device gets its own token stored only as a hash on the server, and you can remove a device at any time from <b>Link devices</b>. The server deletes blocked tries 120 days after they happened, once totals are saved.</p>
+          <p style="margin: 0; color: var(--mute); font-weight: 300">Held notifications, window/page titles, and AI judge verdicts are <b style="color: var(--ink); font-weight: 600">never synced</b>.</p>
+        </article>
+      </section>
 
-    <section style="display: flex; flex-direction: column; gap: 12px">
-      <h2 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 700">Deleting your data</h2>
-      <p style="margin: 0">Uninstalling Luna deletes what it kept on that device. To delete what the server holds, unlink every device, then email <a href="mailto:yzenyux@gmail.com" style="color: var(--link); font-weight: 600">yzenyux@gmail.com</a>.</p>
-    </section>
+      <section id="counts" style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 700">What Luna counts &amp; feedback</h2>
+        <article class="glass glass-card" style="padding: 20px 22px; border: 1px solid var(--line); border-radius: var(--r-card); display: flex; flex-direction: column; gap: 10px">
+          <p style="margin: 0; color: var(--mute); font-weight: 300"><b style="color: var(--ink); font-weight: 600">Anonymous install ping:</b> Once a week, the PC and phone apps send a random number made locally, "Windows" or "Android", and the app version so Luna can measure active installs. It is not linked to an account, name, sessions, or lists, and no IP address is stored. Turn it off any time with <b>Count this install</b> in Settings.</p>
+          <p style="margin: 0; color: var(--mute); font-weight: 300"><b style="color: var(--ink); font-weight: 600">Luna Plus button:</b> Tapping <i>I'm interested</i> on the homepage adds one to an anonymous tally, with no cookie or personal data.</p>
+          <p style="margin: 0; color: var(--mute); font-weight: 300"><b style="color: var(--ink); font-weight: 600">Bug reports:</b> If you submit a report via the <a href="report.html" style="color: var(--link); font-weight: 600">bug report form</a> or email, we only use what you send to diagnose and reply to your report.</p>
+        </article>
+      </section>
 
-    <section style="display: flex; flex-direction: column; gap: 12px">
-      <h2 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 700">Questions</h2>
-      <p style="margin: 0">Write to <a href="mailto:yzenyux@gmail.com" style="color: var(--link); font-weight: 600">yzenyux@gmail.com</a>. If this policy changes, the date at the top changes and the new version is posted here.</p>
-    </section>
-  </article>
+      <section id="delete" style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 700">Deleting your data &amp; questions</h2>
+        <p style="margin: 0; color: var(--mute)">Uninstalling Luna deletes everything kept on that device. To delete what the server holds, unlink every device, then email <a href="mailto:yzenyux@gmail.com" style="color: var(--link); font-weight: 600">yzenyux@gmail.com</a>.</p>
+        <p style="margin: 0; color: var(--mute)">Questions? Write to <a href="mailto:yzenyux@gmail.com" style="color: var(--link); font-weight: 600">yzenyux@gmail.com</a>. When this policy changes, the date at the top updates and the new version is posted here.</p>
+      </section>
+    </main>
+  </div>
 
   <footer style="border-top: 1px solid var(--line)">
     <div style="max-width: 1160px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--mute)">
@@ -99,6 +117,7 @@
         <a href="https://github.com/Yzennnx/luna-releases/releases" style="padding: 10px 12px; color: var(--mute)">All releases</a>
         <a href="https://github.com/Yzennnx/luna-releases/releases" style="padding: 10px 12px; color: var(--mute)">GitHub</a>
         <a href="install.html" style="padding: 10px 12px; color: var(--mute)">Setup guide</a>
+        <a href="report.html" style="padding: 10px 12px; color: var(--mute)">Report a bug</a>
       </nav>
     </div>
   </footer>
