@@ -23,7 +23,7 @@ body{margin:0;background:#FBF6EE}
 /* Daybreak Horizon Bar + page first-render & fallback exit transition. */
 @keyframes lp-horizon{0%{transform:scaleX(0);opacity:1}60%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:.35}}
 @keyframes lp-page{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.lp{position:relative;animation:lp-page .48s var(--exp) both}
+.lp{position:relative;overflow-x:clip !important;overflow-y:visible !important;animation:lp-page .48s var(--exp) both}
 .lp::before{content:"";position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent);transform-origin:left;pointer-events:none;z-index:60;animation:lp-horizon .85s var(--exp) both}
 .lp.lp-leaving{animation:lp-vt-out .17s var(--ease) both}
 .lp.lp-leaving::before{opacity:1;transform:scaleX(1);transition:opacity .12s var(--ease)}
@@ -125,9 +125,15 @@ body{margin:0;background:#FBF6EE}
 .lp .hero-dock>span{transition:transform .22s var(--pop),background-color .2s,color .2s;border-radius:var(--r-tile);cursor:default}
 .lp .hero-dock>span:not([data-active]):hover{transform:translateY(-4px) scale(1.08);background:var(--tint2);color:var(--ink)}
 
-/* Setup guide sidebar links nudge gently on hover. */
+/* Setup & Privacy sidebar: sticky on PC layout, active pill tracks scroll position, links nudge on hover. */
 .lp .side-nav a{transition:transform .22s var(--spring),background-color .2s,color .2s;border-radius:var(--r-tile)}
 .lp .side-nav a:not([style*="background: var(--pri)"]):hover{transform:translateX(4px);background:var(--tint2)}
+.lp .side-nav.has-spy a{background:transparent !important;color:var(--ink) !important;font-weight:500 !important}
+.lp .side-nav.has-spy a.is-active{background:var(--pri) !important;color:var(--onp) !important;font-weight:600 !important}
+.lp .side-nav.has-spy a:not(.is-active):hover{transform:translateX(4px);background:var(--tint2) !important}
+@media (min-width: 920px){
+  .lp .side-nav{position:sticky;top:24px;align-self:flex-start;max-height:calc(100vh - 48px);overflow-y:auto}
+}
 
 /* Help: answers open smoothly, the plus turns into a cross. */
 .lp summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px}

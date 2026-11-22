@@ -139,6 +139,32 @@ if (typeof document !== 'undefined') {
     window.addEventListener('scroll', revealAtBottom, { passive: true });
   }
 
+  // Sticky sidebar scroll-spy (install.html & privacy.html): keeps the active pill synced with the visible section.
+  const sideNav = document.querySelector('.lp .side-nav');
+  if (sideNav) {
+    const links = [...sideNav.querySelectorAll('a[href^="#"]')];
+    const sections = links
+      .map((a) => ({ a, el: document.getElementById(a.getAttribute('href').slice(1)) }))
+      .filter((item) => item.el);
+    if (sections.length) {
+      sideNav.classList.add('has-spy');
+      const setActive = (id) => {
+        for (const { a, el } of sections) a.classList.toggle('is-active', el.id === id);
+      };
+      const updateSpy = () => {
+        const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24;
+        if (atBottom) return setActive(sections[sections.length - 1].el.id);
+        let current = sections[0].el.id;
+        for (const { el } of sections) {
+          if (el.getBoundingClientRect().top <= 140) current = el.id;
+        }
+        setActive(current);
+      };
+      window.addEventListener('scroll', updateSpy, { passive: true });
+      updateSpy();
+    }
+  }
+
   // thanks.html: the Windows installer starts downloading as the page opens.
   if (document.body.dataset.autodownload !== undefined) {
     const a = document.createElement('a');
